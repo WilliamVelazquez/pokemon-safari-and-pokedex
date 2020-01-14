@@ -1,0 +1,27 @@
+{
+  "name": "pokemon-safari-and-pokedex",
+  "version": "1.0.0",
+  "description": "Pokémon Safari and Pokédex developed with React, Redux and Express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamVelazquez/pokemon-safari-and-pokedex.git"
+  },
+  "keywords": [
+    "React",
+    "Pokémon",
+    "Pokédex",
+    "Pokemon",
+    "Pokedex",
+    "WilliamVelazquez"
+  ],
+  "author": "William Velazquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WilliamVelazquez/pokemon-safari-and-pokedex/issues"
+  },
+  "homepage": "https://github.com/WilliamVelazquez/pokemon-safari-and-pokedex#readme"
+}
