@@ -3,7 +3,7 @@
 Pokémon Safari and Pokédex developed with React, Redux and Express.
 Gotta Catch 'Em All!
 
-![Pokédex](./.readme-static/pokedex-readme.png)
+![Pokédex](./.readme-static/pokedex-readme.jpg)
 
 ## Author & Credits
 
@@ -11,5 +11,8 @@ Gotta Catch 'Em All!
 
 ## Social Networks
 
-- [Twitter](https://twitter.com/@WilliamVlazquez)
 - [Website](https://williamvelazquez.com/)
+- [Twitter](https://twitter.com/@WilliamVlazquez)
+- [GitHub](https://github.com/WilliamVelazquez)
+- [LinkedIn](https://www.linkedin.com/in/williamvelazquez/)
+- [E-mail](mailto:info@williamvelazquez.com)
