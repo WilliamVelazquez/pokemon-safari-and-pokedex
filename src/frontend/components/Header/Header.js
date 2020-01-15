@@ -3,7 +3,7 @@ import React from 'react';
 import CircleLed from '../CircleLed/CircleLed';
 import HamburguerIcon from '../HamburguerIcon/HamburguerIcon';
 
-import PokemonLogo from '../../assets/images/logo.png';
+// import PokemonLogo from '../../assets/images/logo.png';
 import PokeballNav from '../../assets/images/pokeball-nav.png';
 
 import './styles.css';

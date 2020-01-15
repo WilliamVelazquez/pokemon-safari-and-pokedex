@@ -28,6 +28,11 @@
 	height: 50px; */
 }
 
+.circle__led--border.small.fixed {
+	width: 25px;
+	height: 25px;
+}
+
 .circle__led--glass {
 	display: grid;
 	border-radius: 50%;
@@ -48,6 +53,11 @@
 	height: 19px;
 	/* width: 42px;
 	height: 42px; */
+}
+
+.circle__led--glass.small.fixed {
+	width: 19px;
+	height: 19px;
 }
 
 .circle__led--glass.blue {
@@ -90,6 +100,12 @@
 	/* width: 20px;
 	height: 10px;
 	margin-top: 5px; */
+}
+
+.circle__led--reflect.small.fixed {
+	width: 8px;
+	height: 4px;
+	margin-top: 2px;
 }
 
 /* @media only screen and (min-width: 600px) {
