@@ -49,7 +49,9 @@
   font-weight: bold;
   border-radius: 5px;
   padding: 0px 18px 5px 0px;
-  background-color: #FF4242;
+  background-color: #d21d1d;
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
 
 .header__menu li {
