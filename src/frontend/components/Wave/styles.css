@@ -4,6 +4,7 @@
   margin-top: 58px;
   text-align: center;
   position: relative;
+  margin-bottom: 0px;
   background: transparent;
 }
 
@@ -26,6 +27,7 @@
 @media only screen and (min-width: 768px) {
   .wave_container {
     margin-top: 25px;
+    margin-bottom: -20px;
   }
 }
 
@@ -38,5 +40,6 @@
 @media only screen and (min-width: 1200px) {
   .wave_container {
     margin-top: 5px;
+    margin-bottom: -50px;
   }
 }
