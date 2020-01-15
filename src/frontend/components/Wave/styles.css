@@ -1,7 +1,7 @@
 .wave_container {
   color: #ffffff;
   overflow: hidden;
-  margin-top: 58px;
+  padding-top: 58px;
   text-align: center;
   position: relative;
   margin-bottom: 0px;
@@ -20,26 +20,26 @@
 
 @media only screen and (min-width: 600px) {
   .wave_container {
-    margin-top: 35px;
+    padding-top: 35px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .wave_container {
-    margin-top: 25px;
+    padding-top: 25px;
     margin-bottom: -20px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .wave_container {
-    margin-top: 15px;
+    padding-top: 15px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .wave_container {
-    margin-top: 5px;
+    padding-top: 5px;
     margin-bottom: -50px;
   }
 }
