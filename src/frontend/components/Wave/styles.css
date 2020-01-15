@@ -1,0 +1,13 @@
+.wave_container {
+  color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  background: transparent;
+  /* background: #EEE; */
+  /* background: #09F; */
+}
+.wave_container > svg {
+  display: block;
+  /* transform: rotateY(180deg); */
+}
