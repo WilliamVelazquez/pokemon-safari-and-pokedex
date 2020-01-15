@@ -1,12 +1,12 @@
 .header {
   top: 0px;
   width: 100%;
-  height: 100px;
+  height: 60px;
   display: flex;
   color: #ffffff;
   position: absolute;
   align-items: center;
-  /*background: #FF4242;#B02E0C*/
+  background: #FF4242;/*#B02E0C*/
   justify-content: space-between;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .header__menu {
-	margin-right: 30px;
+	margin-right: 15px;
 }
 
 .header__menu ul {
@@ -44,7 +44,12 @@
 }
 
 .header__menu:hover ul, ul:hover {
-	display: block;
+  display: block;
+  margin-top: -6px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 0px 18px 5px 0px;
+  background-color: #FF4242;
 }
 
 .header__menu li {
