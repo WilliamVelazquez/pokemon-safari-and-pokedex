@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CircleLed from '../CircleLed/CircleLed';
+import HamburguerIcon from '../HamburguerIcon/HamburguerIcon';
 
 import PokemonLogo from '../../assets/images/logo.png';
 import PokeballNav from '../../assets/images/pokeball-nav.png';
@@ -17,10 +18,10 @@ const Header = () =>(
       <div className='header__menu'>
         <div className='header__menu--profile'>
           <img src={PokeballNav} alt='Nav Icon' />
-          <p>Menú</p>
+          <div style={{width: 40}}><HamburguerIcon /></div>
         </div>
         <ul>
-          <li><a href='/'>Mi PC</a></li>
+          <li><a href='/'>My PC</a></li>
           <li><a href='/'>Safari</a></li>
           <li><a href='/'>Pokédex</a></li>
         </ul>

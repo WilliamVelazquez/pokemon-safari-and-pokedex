@@ -45,10 +45,10 @@
 
 .header__menu:hover ul, ul:hover {
   display: block;
-  margin-top: -6px;
+  /* margin-top: -6px; */
   font-weight: bold;
   border-radius: 5px;
-  padding: 0px 18px 5px 0px;
+  padding: 0px 17px 5px 0px;
   background-color: #d21d1d;
   filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
   -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
