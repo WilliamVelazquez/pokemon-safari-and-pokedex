@@ -6,7 +6,7 @@
   color: #ffffff;
   position: absolute;
   align-items: center;
-  background: #FF4242;/*#B02E0C*/
+  background: #d21d1d;/*#B02E0C*/
   justify-content: space-between;
 }
 
@@ -74,4 +74,45 @@
 .header__menu--profile img {
   width: 40px;
   margin-right: 8px;
+}
+
+.header__leds {
+  top: 25px;
+  left: 105px;
+  /* top: 65px;
+  left: 200px; */
+  display: grid;
+  position: absolute;
+  grid-column-gap: 12px;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3,min-content);
+}
+
+/* @media only screen and (min-width: 600px) {
+  .header__leds {
+    top: 20px;
+    left: 165px;
+  }
+} */
+
+@media only screen and (min-width: 768px) {
+  .header__leds {
+    top: 20px;
+    left: 165px;
+  }
+}
+/* 
+@media only screen and (min-width: 992px) {
+  .header__leds {
+    top: 20px;
+    left: 165px;
+  }
+}
+*/
+
+@media only screen and (min-width: 1200px) {
+  .header__leds {
+    top: 30px;
+    left: 250px;
+  }
 }
