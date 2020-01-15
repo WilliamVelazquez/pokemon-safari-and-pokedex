@@ -7,6 +7,16 @@
   background: transparent;
 }
 
+.wave_container > svg {
+  display: block;
+  /* transform: rotateY(180deg); */
+}
+
+.shadow {
+  filter: drop-shadow( 1px 3px 2px rgba(0, 0, 0, .7));
+  -webkit-filter: drop-shadow( 1px 3px 2px rgba(0, 0, 0, .7));
+}
+
 @media only screen and (min-width: 600px) {
   .wave_container {
     margin-top: 35px;
@@ -29,14 +39,4 @@
   .wave_container {
     margin-top: 5px;
   }
-}
-
-.wave_container > svg {
-  display: block;
-  /* transform: rotateY(180deg); */
-}
-
-.shadow {
-  filter: drop-shadow( 1px 3px 2px rgba(0, 0, 0, .7));
-  -webkit-filter: drop-shadow( 1px 3px 2px rgba(0, 0, 0, .7));
 }
