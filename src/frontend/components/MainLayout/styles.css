@@ -15,5 +15,13 @@ body{
 .main__container{
   width: 100%;
   height: 100vh;
+  /* background-color: #ef1f1f; */
+}
+
+.main__container.red{
   background-color: #ef1f1f;
+}
+
+.main__container.gray{
+  background-color: #E6E8E6;
 }

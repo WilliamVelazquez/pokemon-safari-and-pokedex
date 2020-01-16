@@ -9,7 +9,7 @@ const Screws = (props) => {
     let screws = [];
     for (let index = 0; index < quantity; index++) {
       screws.push(
-        <div className={`circle__screw`}>
+        <div className={`circle__screw`} key={index}>
           <div className={`circle__screw--border`}>
             <div className={`circle__screw--cover ${props.color||'gray'}`}>
               <div className='circle__screw--detail'>
