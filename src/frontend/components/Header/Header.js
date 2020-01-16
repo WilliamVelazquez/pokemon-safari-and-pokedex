@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import CircleLed from '../CircleLed/CircleLed';
@@ -23,11 +24,13 @@ const Header = () => {
             <img src={PokeballNav} alt='Nav Icon' />
             <div style={{width: 40}}><HamburguerIcon /></div>
           </div>
-          <ul>
-            <li><a href='/'>{t('menu.my_pc')}</a></li>
-            <li><a href='/'>Safari</a></li>
-            <li><a href='/'>Pokédex</a></li>
-          </ul>
+          <nav>
+            <ul>
+              <li><Link to='/pc'>{t('menu.my_pc')}</Link></li>
+              <li><Link to='/safari'>{t('menu.safari')}</Link></li>
+              <li><Link to='/'>{t('menu.pokedex')}</Link></li>
+            </ul>
+          </nav>
         </div>
       </header>
       <CircleLed color='blue' size='big' main />
