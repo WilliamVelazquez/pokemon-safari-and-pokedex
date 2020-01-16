@@ -1,7 +1,6 @@
 import React from 'react';
 
 import MainLayout from '../components/MainLayout/MainLayout';
-import Screen from '../components/Screen/Screen';
 import EllipsisLoader from '../components/EllipsisLoader/EllipsisLoader';
 
 const PC = () => {
