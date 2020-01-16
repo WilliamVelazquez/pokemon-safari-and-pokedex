@@ -55,6 +55,7 @@ module.exports = (env) => {
     },
     devServer: {
       port: 3000,
+      historyApiFallback: true,
     },
     node: {
       fs: 'empty',
