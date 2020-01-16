@@ -76,6 +76,14 @@
 .header__menu--profile img {
   width: 40px;
   margin-right: 8px;
+  overflow: hidden;
+  transition-duration: 0.4s;
+  transition-property: transform;
+}
+
+.header__menu:hover img {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .header__leds {
