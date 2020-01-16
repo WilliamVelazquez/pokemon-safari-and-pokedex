@@ -2,6 +2,7 @@ import React from 'react';
 
 import Wave from '../Wave/Wave';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 import './styles.css';
 
@@ -12,6 +13,7 @@ const MainLayout = (props) => {
       <Wave />
       <Header />
       {children}
+      <Footer />
     </main>
   );
 };
