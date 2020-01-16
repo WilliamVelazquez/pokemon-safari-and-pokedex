@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import "babel-polyfill";
+import './localization/i18n';
 
 import App from "./routes/App";
 
