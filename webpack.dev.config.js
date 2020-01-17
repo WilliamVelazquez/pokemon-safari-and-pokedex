@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  resolve:{
+  resolve: {
     alias: {
       Utils: path.resolve(__dirname, 'src/frontend/utils/'),
       Constants: path.resolve(__dirname, 'src/frontend/constants/')
@@ -26,6 +26,14 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /(node_modules)/,
+      //   enforce: 'pre',
+      //   use: {
+      //     loader: 'eslint-loader',
+      //   },
+      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
