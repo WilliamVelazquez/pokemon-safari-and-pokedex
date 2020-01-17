@@ -20,11 +20,12 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <ReactFlagsSelect 
-        defaultCountry = { t(`countryCode.${localStorage.getItem('language')}`) || 'US'}
+        defaultCountry = { t(`countryCode.${localStorage.getItem('language')||'en'}`) || 'US'}
         countries = {['US', 'MX']} 
         customLabels = {{'US': 'EN-US','MX': 'ES-MX'}} 
         showSelectedLabel = {true}
         onSelect = {onSelectFlag}
+        placeholder = { t('languagePlaceHolder') }
       />
     </footer>
   );

@@ -13,7 +13,8 @@ const resources = {
       'countryCode': {
         en: 'US',
         es: 'MX',
-      }
+      },
+      'languagePlaceHolder': 'Select Language',
     },
   },
   es: {
@@ -30,7 +31,8 @@ const resources = {
       'countryCode': {
         en: 'US',
         es: 'MX',
-      }
+      },
+      'languagePlaceHolder': 'Selecciona un idioma',
     },
   },
 };
