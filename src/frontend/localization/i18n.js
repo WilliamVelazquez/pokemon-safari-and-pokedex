@@ -10,8 +10,8 @@ i18n
   .use(initReactI18next)// pass the i18n instance to react-i18next
   .init({
     resources,
-    lng: "en",
-    fallbackLng: "en",
+    lng: localStorage.getItem('language') || 'en',
+    fallbackLng: 'en',
     debug: true,
     interpolation: {
       escapeValue: false,// not needed for react as it escapes by default
