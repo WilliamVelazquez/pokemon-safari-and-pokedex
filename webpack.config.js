@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -11,29 +11,29 @@ module.exports = (env) => {
 
   const plugins = [
     new MiniCssExtractPlugin({
-      filename: "css/[name].[hash].css"
+      filename: 'css/[name].[hash].css',
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/frontend/public/index.html',
       favicon: './src/frontend/public/favicon.ico',
-      title: 'Pokédex & Safari | Pokémon'
-    })
-  ]
+      title: 'Pokédex & Safari | Pokémon',
+    }),
+  ];
 
   if (env.NODE_ENV === 'production') {
     plugins.push(
-      new CleanWebpackPlugin()
-    )
+      new CleanWebpackPlugin(),
+    );
   }
 
   return {
     mode: (env.NODE_ENV === 'production') ? 'production' : 'none',
-    resolve:{
+    resolve: {
       alias: {
         Utils: path.resolve(__dirname, 'src/frontend/utils/'),
-        Constants: path.resolve(__dirname, 'src/frontend/constants/')
-      }
+        Constants: path.resolve(__dirname, 'src/frontend/constants/'),
+      },
     },
     optimization: {
       minimizer: [
@@ -41,7 +41,7 @@ module.exports = (env) => {
           cache: true,
           parallel: true,
         }),
-        new OptimizeCssAssetsPlugin({})
+        new OptimizeCssAssetsPlugin({}),
       ],
     },
     entry: {
@@ -75,8 +75,8 @@ module.exports = (env) => {
           test: /\.css$/,
           use: [
             MiniCssExtractPlugin.loader,
-            'css-loader'
-          ]
+            'css-loader',
+          ],
         },
         {
           test: /\.(jpg|jpeg|png|gif)$/,
@@ -86,17 +86,17 @@ module.exports = (env) => {
               limit: 10000,
               fallback: 'file-loader',
               name: 'images/[name].[hash].[ext]',
-            }
-          }
+            },
+          },
         },
         {
           test: /\.svg/,
           use: {
             loader: 'svg-url-loader',
-          }
+          },
         },
-      ]
+      ],
     },
-    plugins
-  }
-}
+    plugins,
+  };
+};

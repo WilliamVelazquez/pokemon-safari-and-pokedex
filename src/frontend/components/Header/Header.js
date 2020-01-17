@@ -12,7 +12,7 @@ import './styles.css';
 
 const Header = () => {
   const { t } = useTranslation();
-  return(
+  return (
     <>
       <header className='header'>
         <div className='header__logo_container'>
@@ -22,7 +22,7 @@ const Header = () => {
         <div className='header__menu'>
           <div className='header__menu--profile'>
             <img src={PokeballNav} alt='Nav Icon' />
-            <div style={{width: 40}}><HamburguerIcon /></div>
+            <div style={{ width: 40 }}><HamburguerIcon /></div>
           </div>
           <nav>
             <ul>
@@ -41,7 +41,6 @@ const Header = () => {
       </div>
     </>
   );
-}
-
+};
 
 export default Header;

@@ -6,12 +6,12 @@ import Vents from '../Vents/Vents';
 import './styles.css';
 
 const Screen = (props) => {
-  const {children} = props;
+  const { children } = props;
   return (
     <section className='screen__container'>
-			<div className='screen__plate'>
-				<div className='screen__glass'>
-					{children}
+      <div className='screen__plate'>
+        <div className='screen__glass'>
+          {children}
         </div>
         <div className='screen__plate__top--details'>
           <Screws quantity={2} />
@@ -20,7 +20,7 @@ const Screen = (props) => {
           <CircleLed color='red' size='small' fixed />
           <Vents quantity={3} />
         </div>
-			</div>
+      </div>
     </section>
   );
 };

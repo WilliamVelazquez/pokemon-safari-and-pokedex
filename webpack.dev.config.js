@@ -5,15 +5,15 @@ module.exports = {
   resolve: {
     alias: {
       Utils: path.resolve(__dirname, 'src/frontend/utils/'),
-      Constants: path.resolve(__dirname, 'src/frontend/constants/')
-    }
+      Constants: path.resolve(__dirname, 'src/frontend/constants/'),
+    },
   },
   entry: {
     app: path.resolve(__dirname, 'src/frontend/index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   devServer: {
     port: 3000,
@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(jpg|jpeg|png|gif)$/,
@@ -53,21 +53,21 @@ module.exports = {
             limit: 1000000,
             fallback: 'file-loader',
             name: 'images/[name].[hash].[ext]',
-          }
-        }
+          },
+        },
       },
       {
         test: /\.svg/,
         use: {
           loader: 'svg-url-loader',
-        }
+        },
       },
-    ]
+    ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ 
+    new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './src/frontend/public/index.html'
-    })
-  ]
-}
+      template: './src/frontend/public/index.html',
+    }),
+  ],
+};

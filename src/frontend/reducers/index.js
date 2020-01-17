@@ -1,12 +1,12 @@
 const reducer = (state, action) => {
-  switch (action.type){
+  switch (action.type) {
     case 'ADD_POKEMON':
       return {
         ...state,
-        myPokemon: [...state.myPokemon, action.payload]
-      }
+        myPokemon: [...state.myPokemon, action.payload],
+      };
   }
   return state;
-}
+};
 
 export default reducer;

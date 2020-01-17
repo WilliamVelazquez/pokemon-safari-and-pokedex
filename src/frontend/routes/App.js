@@ -20,7 +20,7 @@ const App = () => {
     }
   }, [initialized]);
 
-  return(
+  return (
     <BrowserRouter>
       <Switch>
         <Route exact path='/' component={Pokedex} />
@@ -29,6 +29,6 @@ const App = () => {
       </Switch>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

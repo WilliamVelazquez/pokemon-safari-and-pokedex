@@ -15,4 +15,4 @@ app.get('*', (request, response) => {
 app.listen(PORT, (error) => {
   if (error) console.log(error);
   console.log(`Server running on PORT: ${PORT}`);
-})
+});

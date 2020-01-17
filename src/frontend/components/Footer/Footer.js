@@ -15,20 +15,20 @@ const Footer = () => {
 
   const onSelectFlag = (countryCode) => {
     setLanguage(t(`languages.${countryCode}`));
-  }
+  };
 
   return (
     <footer className='footer'>
-      <ReactFlagsSelect 
-        defaultCountry = { t(`countryCode.${localStorage.getItem('language')||'en'}`) || 'US'}
-        countries = {['US', 'MX']} 
-        customLabels = {{'US': 'EN-US','MX': 'ES-MX'}} 
-        showSelectedLabel = {true}
-        onSelect = {onSelectFlag}
-        placeholder = { t('languagePlaceHolder') }
+      <ReactFlagsSelect
+        defaultCountry={t(`countryCode.${localStorage.getItem('language') || 'en'}`) || 'US'}
+        countries={['US', 'MX']}
+        customLabels={{ 'US': 'EN-US', 'MX': 'ES-MX' }}
+        showSelectedLabel={true}
+        onSelect={onSelectFlag}
+        placeholder={t('languagePlaceHolder')}
       />
     </footer>
   );
-}
+};
 
 export default Footer;

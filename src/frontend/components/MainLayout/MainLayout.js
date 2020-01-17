@@ -7,9 +7,9 @@ import Footer from '../Footer/Footer';
 import './styles.css';
 
 const MainLayout = (props) => {
-  const {backgroundColor, children} = props;
+  const { backgroundColor, children } = props;
   return (
-    <main className={`main__container ${backgroundColor?backgroundColor:'red'}`}>
+    <main className={`main__container ${backgroundColor ? backgroundColor : 'red'}`}>
       <Wave />
       <Header />
       {children}

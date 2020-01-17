@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css';
 
-const CircleLed = (props) =>(
+const CircleLed = (props) => (
 	<div className={`circle__led${props.main?' absolute':''}`}>
 		<div className={`circle__led--border ${props.size||'big'}${props.fixed?' fixed':''}`}>
 			<div className={`circle__led--glass ${props.size||'big'}${props.fixed?' fixed':''} ${props.color||'blue'}`}>
