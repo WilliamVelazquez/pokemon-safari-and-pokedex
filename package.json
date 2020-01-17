@@ -9,6 +9,7 @@
     "build:local": "webpack --env.NODE_ENV=local --env.production --progress",
     "build:prod": "webpack -p --env.NODE_ENV=production --env.production --progress",
     "lint": "eslint **/*.js --ignore-path .eslintignore",
+    "start:dev": "nodemon src/server/index.js --exact babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,11 +34,13 @@
     "@babel/core": "7.8.3",
     "@babel/preset-env": "7.8.3",
     "@babel/preset-react": "7.8.3",
+    "@babel/register": "7.8.3",
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "i18next": "19.0.3",
     "i18next-browser-languagedetector": "4.0.1",
     "i18next-xhr-backend": "3.2.2",
+    "nodemon": "2.0.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-flags-select": "1.1.10",
