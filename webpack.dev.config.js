@@ -38,7 +38,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(jpg|png|gif|svg)$/,
+        test: /\.(jpg|jpeg|png|gif)$/,
         use: {
           loader: 'url-loader',
           options: {
@@ -46,6 +46,12 @@ module.exports = {
             fallback: 'file-loader',
             name: 'images/[name].[hash].[ext]',
           }
+        }
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: 'svg-url-loader',
         }
       },
     ]

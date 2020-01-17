@@ -2,7 +2,7 @@ const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
@@ -14,7 +14,7 @@ module.exports = (env) => {
       filename: "css/[name].[hash].css"
     }),
     new HtmlWebpackPlugin({
-      filename: 'dist/index.html',
+      filename: 'index.html',
       template: 'src/frontend/public/index.html',
       favicon: './src/frontend/public/favicon.ico',
       title: 'Pokédex & Safari | Pokémon'
@@ -50,7 +50,7 @@ module.exports = (env) => {
     output: {
       path: (env.NODE_ENV === 'production') ? path.resolve(__dirname, './dist/') : path.resolve(__dirname, 'dist'),
       filename: 'js/[name].[hash].js',
-      publicPath: (env.NODE_ENV === 'production') ? './public/' : './dist/',
+      publicPath: (env.NODE_ENV === 'production') ? './' : './dist/',
       chunkFilename: 'js/[id].[chunkhash].js',
     },
     devServer: {
@@ -79,7 +79,7 @@ module.exports = (env) => {
           ]
         },
         {
-          test: /\.(jpg|png|gif|svg)$/,
+          test: /\.(jpg|jpeg|png|gif)$/,
           use: {
             loader: 'url-loader',
             options: {
@@ -87,6 +87,12 @@ module.exports = (env) => {
               fallback: 'file-loader',
               name: 'images/[name].[hash].[ext]',
             }
+          }
+        },
+        {
+          test: /\.svg/,
+          use: {
+            loader: 'svg-url-loader',
           }
         },
       ]
