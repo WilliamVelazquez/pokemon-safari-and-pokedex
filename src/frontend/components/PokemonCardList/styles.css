@@ -1,0 +1,32 @@
+.list__container{
+	width: 100%;
+	height: 100%;
+	display: grid;
+	overflow: auto;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.list__loader {
+	grid-column: 2;
+	margin-top: -10px;
+	align-self: center;
+	justify-self: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .list__container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .list__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .list__container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}

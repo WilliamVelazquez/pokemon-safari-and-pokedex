@@ -2,13 +2,13 @@ import React from 'react';
 
 import MainLayout from '../components/MainLayout/MainLayout';
 import Screen from '../components/Screen/Screen';
-import EllipsisLoader from '../components/EllipsisLoader/EllipsisLoader';
+import PokemonCardList from '../components/PokemonCardList/PokemonCardList';
 
 const Pokedex = () => {
   return (
     <MainLayout>
       <Screen>
-        <div style={{ display: 'flex', justifyContent: 'center' }}><EllipsisLoader /></div>
+        <PokemonCardList />
       </Screen>
     </MainLayout>
   );
