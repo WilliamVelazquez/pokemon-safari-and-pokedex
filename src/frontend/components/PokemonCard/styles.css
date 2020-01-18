@@ -1,0 +1,31 @@
+.card__container {
+	width: 80%;
+	cursor: pointer;
+	margin: 10px 0px;
+  transition: 0.3s;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, .25);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2px 5px;
+	align-self: center;
+	justify-self: center;
+	flex-direction: column;
+}
+
+.card__container img {
+	margin-bottom: 5px;
+}
+
+.card__container span {
+	font-size: 14px;
+	color: #29335C;
+	font-weight: bold;
+}
+
+.card__container:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
