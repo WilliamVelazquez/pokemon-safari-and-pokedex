@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { isEmptyObject } from 'Utils/functions';
+import { API_BASE_URL } from 'Constants/app';
 
 import PokeballNav from '../../assets/images/pokeball-nav.png';
 
 import './styles.css';
 
 const PokemonCard = (props) => {
-	const { name, info, children } = props;
-	const [data, setData] = useState([]);
-	const [sprites, setSprites] = useState([]);
+	const { name, info, pokemonId, children } = props;
+	const [sprites, setSprites] = useState({});
 
 	useEffect(() => {
     const fetchPokemonData = async () => {
-			const result = await fetch(info);
-			const data = await result.json();
-			// console.log('pokemon data-->', data);
-      setData(data);
+			const result = await fetch(`${API_BASE_URL}${pokemonId}`);
+			const { data, message } = await result.json();
       setSprites(data.sprites);
 		};
 		fetchPokemonData();
@@ -23,10 +22,10 @@ const PokemonCard = (props) => {
 	return (
     <div className="card__container">
 			{ 
-				data ?
-				<img src={sprites.front_default} alt={`${name} image`} />
+				isEmptyObject(sprites) ?
+				<img className='rotating' src={PokeballNav} alt={`${name} image`} />
 				:
-				<img src={PokeballNav} alt='image loader' />
+				<img src={sprites.front_default} alt={`${name} image`} />
 			}
 			<span>{name}</span>
     </div>

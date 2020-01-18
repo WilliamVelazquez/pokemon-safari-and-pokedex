@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from 'Constants/app';
 
 import PokemonCard from '../PokemonCard/PokemonCard';
 import EllipsisLoader from '../EllipsisLoader/EllipsisLoader';
@@ -7,20 +8,22 @@ import './styles.css';
 
 const PokemonCardList = (props) => {
 	const [data, setData] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [url, setUrl] = useState(
-    'http://localhost:3002/api/pokemons?initial=1&quantity=7',
+		`${API_BASE_URL}?initial=1&quantity=7`,
   );
 
 	useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
-			const result = await fetch(url);
-			const { data, message } = await result.json();
-			console.log('data-->', data.results);
-			// console.log('message-->', message);
-      setData(data.results);
-      setIsLoading(false);
+			try {
+				setIsLoading(true);
+				const result = await fetch(url);
+				const { data, message } = await result.json();
+				setData(data.results);
+				setIsLoading(false);
+			} catch (error) {
+				setIsLoading(false);
+			}
 		};
 		fetchData();
 	}, []);
@@ -31,15 +34,18 @@ const PokemonCardList = (props) => {
 				data.length>0 ?
 				<div className='list__container'>
 					{
-						data.map( (pokemon) => <PokemonCard name={pokemon.name} info={pokemon.url} key={pokemon.name} />)
+						data.map( (pokemon) => <PokemonCard name={pokemon.name} info={pokemon.url} pokemonId={pokemon.url.split('/pokemon/')[1].slice(0,-1)} key={pokemon.name} />)
 					}
 					<div className='list__loader'>
 						<EllipsisLoader />
 					</div>
 				</div>
 				:
-				<div style={{ display: 'flex', justifyContent: 'center', marginTop: 50}}><EllipsisLoader /></div>
-			} 
+				isLoading ?
+				<div className='list__user__feedback'><EllipsisLoader /></div>
+				:
+				<div className='list__user__feedback'><h2>Can not load the data :(</h2><p>Please try again later</p></div>
+			}
 		</>
   );
 };

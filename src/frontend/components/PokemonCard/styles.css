@@ -2,7 +2,7 @@
 	width: 80%;
 	cursor: pointer;
 	margin: 10px 0px;
-  transition: 0.3s;
+	transition: 0.3s;
 	border-radius: 5px;
 	background: rgba(255, 255, 255, .25);
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -18,6 +18,16 @@
 .card__container img {
 	margin-bottom: 5px;
 }
+
+.card__container img.rotating {
+	animation:spin 4s linear infinite;
+	-moz-animation:spin 4s linear infinite;
+	-webkit-animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .card__container span {
 	font-size: 14px;
