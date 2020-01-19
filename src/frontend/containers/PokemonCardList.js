@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { API_BASE_URL, INITIAL_POKEMON_NUMBER, LAST_POKEMON_NUMBER, POKEMON_QUANTITY_TO_LOAD } from 'Constants/app';
-import { addPokemons, setNewInitial } from '../actions';
+import { addPokemons } from '../actions';
 
 import PokemonCard from '../components/PokemonCard/PokemonCard';
 import ObservableLoader from '../components/ObservableLoader/ObservableLoader';
-import EllipsisLoader from '../components/EllipsisLoader/EllipsisLoader';
+import UserLoadingFeedback from '../components/UserLoadingFeedback/UserLoadingFeedback';
 
 import '../components/PokemonCardList/styles.css';
 
@@ -65,15 +65,9 @@ class PokemonCardList extends Component{
 						pokemons.map( (pokemon) => <PokemonCard name={pokemon.name} info={pokemon.url} pokemonId={pokemon.url.split('/pokemon/')[1].slice(0,-1)} key={pokemon.name} />)
 					}
 					<ObservableLoader completed={isCompleted} handleIntersection={this.handleAddPokemons} />
-					{/* <div className='list__loader' ref={observable}> 
-						<EllipsisLoader />
-					</div> */}
 				</div>
 				:
-				isLoading ?
-				<div className='list__user__feedback'><EllipsisLoader /></div>
-				:
-				<div className='list__user__feedback'><h2>Can not load the data :(</h2><p>Please try again later</p></div>
+				<UserLoadingFeedback isLoading={isLoading} />
 			}
 		</>
 		);
@@ -90,7 +84,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
 	addPokemons,
-	setNewInitial
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonCardList);

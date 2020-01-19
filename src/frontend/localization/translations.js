@@ -15,6 +15,8 @@ const resources = {
         es: 'MX',
       },
       'languagePlaceHolder': 'Select Language',
+      'userFeedback': 'Can not load the data :(',
+      'tryAgainLater': 'Please wait a moment or try again later',
     },
   },
   es: {
@@ -33,6 +35,8 @@ const resources = {
         es: 'MX',
       },
       'languagePlaceHolder': 'Selecciona un idioma',
+      'userFeedback': 'No se ha cargado la información :(',
+      'tryAgainLater': 'Por favor espera un momento o intenta de nuevo más tarde',
     },
   },
 };

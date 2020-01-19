@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Component } from 'react';
 import { connect } from 'react-redux';
 import { API_BASE_URL, INITIAL_POKEMON_NUMBER, LAST_POKEMON_NUMBER, POKEMON_QUANTITY_TO_LOAD } from 'Constants/app';
-import { addPokemons, setNewInitial } from '../../actions';
+import { addPokemons } from '../../actions';
 
 import PokemonCard from '../PokemonCard/PokemonCard';
 import ObservableLoader from '../ObservableLoader/ObservableLoader';
@@ -10,7 +10,7 @@ import EllipsisLoader from '../EllipsisLoader/EllipsisLoader';
 import './styles.css';
 
 const PokemonCardList = (props) => {
-	const { pokemons, initialPokemon, addPokemons, setNewInitial } = props;
+	const { pokemons, initialPokemon, addPokemons } = props;
 	const [isLoading, setIsLoading] = useState(true);
 	// const [initial, setInitial] = useState(INITIAL_POKEMON_NUMBER);
 	const [isCompleted, setIsCompleted] = useState(false);
@@ -43,10 +43,10 @@ const PokemonCardList = (props) => {
 		}
 	}
 
-	useEffect(() => {
-		// console.log('testing.....');
-		setNewInitial({ initial: pokemons.length + 1 });
-	}, [pokemons]);
+	// useEffect(() => {
+	// 	// console.log('testing.....');
+	// 	setNewInitial({ initial: pokemons.length + 1 });
+	// }, [pokemons]);
 
 	useEffect(() => {
     const init = () => {
@@ -95,7 +95,7 @@ function mapStateToProps (state) {
 
 const mapDispatchToProps = {
 	addPokemons,
-	setNewInitial
+	// setNewInitial
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonCardList);

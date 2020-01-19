@@ -13,23 +13,6 @@
 	justify-self: center;
 }
 
-.list__user__feedback {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.list__user__feedback h2,
-.list__user__feedback p {
-	font-size: 24px;
-	margin: 5px 0px;
-	color: #29335C;
-	font-weight: bold;
-	text-align: center;
-}
-
 @media only screen and (min-width: 768px) {
   .list__container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
