@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { API_BASE_URL, INITIAL_POKEMON_NUMBER, LAST_POKEMON_NUMBER, POKEMON_QUANTITY_TO_LOAD } from 'Constants/app';
-import { addPokemons } from '../actions';
+import { addPokemons, selectPokemon } from '../actions';
 
 import PokemonCard from '../components/PokemonCard/PokemonCard';
 import ObservableLoader from '../components/ObservableLoader/ObservableLoader';
@@ -35,7 +35,7 @@ class PokemonCardList extends Component{
 			// console.log('LAST_POKEMON_NUMBER-->' + LAST_POKEMON_NUMBER + '  || Total--->' + this.props.pokemons.length + '   || Faltan--->'+left);
 			const quantity = left > POKEMON_QUANTITY_TO_LOAD ? POKEMON_QUANTITY_TO_LOAD : left;
 			// console.log('initialPokemon--->', this.props.initialPokemon);
-			let url = `${API_BASE_URL}?initial=${this.props.initialPokemon}&quantity=${quantity}`;
+			const url = `${API_BASE_URL}?initial=${this.props.initialPokemon}&quantity=${quantity}`;
 			// console.log(url);
 			const result = await fetch(url);
 			const { data, message } = await result.json();
@@ -50,7 +50,24 @@ class PokemonCardList extends Component{
 				this.setState({ isCompleted:true });
 			}
 		}
-  }
+	}
+	
+	handleSelectPokemon = async (selectedPokemon) => {
+		try {
+			const result = await fetch(`${API_BASE_URL}info/${selectedPokemon}`);
+			const { data } = await result.json();
+			// console.log('selectedPokemonA-->', data);
+			const baseData = await fetch(`${API_BASE_URL}/${selectedPokemon}`);
+			const responseJson = await baseData.json();
+			// console.log('selectedPokemonB-->', responseJson.data);
+			this.props.selectPokemon({
+				...data,
+				baseData: { ...responseJson.data }
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
   render(){
     const { pokemons } = this.props;
@@ -60,9 +77,9 @@ class PokemonCardList extends Component{
 			<>
 			{
 				pokemons.length>0 ?
-				<div className='list__container'>
+				<div className={`list__container${this.props.modalOpened ? ' hidden':''}`}>
 					{
-						pokemons.map( (pokemon) => <PokemonCard name={pokemon.name} info={pokemon.url} pokemonId={pokemon.url.split('/pokemon/')[1].slice(0,-1)} key={pokemon.name} />)
+						pokemons.map( (pokemon) => <PokemonCard name={pokemon.name} handleClick={this.handleSelectPokemon} info={pokemon.url} pokemonId={pokemon.url.split('/pokemon/')[1].slice(0,-1)} key={pokemon.name} />)
 					}
 					<ObservableLoader completed={isCompleted} handleIntersection={this.handleAddPokemons} />
 				</div>
@@ -84,6 +101,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
 	addPokemons,
+	selectPokemon,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonCardList);

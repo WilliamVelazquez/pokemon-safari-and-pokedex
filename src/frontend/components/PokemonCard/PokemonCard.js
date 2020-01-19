@@ -7,7 +7,7 @@ import PokeballNav from '../../assets/images/pokeball-nav.png';
 import './styles.css';
 
 const PokemonCard = (props) => {
-	const { name, info, pokemonId, children } = props;
+	const { name, info, pokemonId, handleClick, children } = props;
 	const [sprites, setSprites] = useState({});
 
 	useEffect(() => {
@@ -20,7 +20,7 @@ const PokemonCard = (props) => {
 	}, []);
 
 	return (
-    <div className="card__container">
+    <div onClick={isEmptyObject(sprites)?null:handleClick?()=>handleClick(pokemonId):null} className="card__container">
 			{ 
 				isEmptyObject(sprites) ?
 				<img className='rotating' src={PokeballNav} alt={`${name} image`} />

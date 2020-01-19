@@ -6,6 +6,10 @@
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
+.hidden {
+	display: none;
+}
+
 .list__loader {
 	grid-column: 2;
 	margin-top: -10px;
