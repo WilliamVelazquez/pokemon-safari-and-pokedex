@@ -13,7 +13,7 @@ import '../components/PokemonCardList/styles.css';
 class PokemonCardList extends Component{
 	state = {
     isLoading: true,
-		isCompleted: false
+		isCompleted: this.props.pokemons.length >= LAST_POKEMON_NUMBER ? true: false
   };
   
   componentDidMount() {

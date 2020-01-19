@@ -67,6 +67,14 @@
 	font-size: 18px;
 }
 
+/* .infoCard__data__title h3 {
+	height: 30px;
+    padding: 6px;
+	color: #fff;
+    border-radius: 50%;
+	background: #29335C;
+} */
+
 .infoCard__data__types {
 	display: grid;
 	color: #ffffff;
@@ -84,6 +92,8 @@
 	width: max-content;
 	border-radius: 10px;
 	text-transform: capitalize;
+	border: 2px solid #29335C;
+	text-shadow: 1px 1px 3px #000000;
 }
 
 .infoCard__data__description {
