@@ -1,0 +1,6 @@
+.list__loader {
+	grid-column: 2;
+	margin-top: -10px;
+	align-self: center;
+	justify-self: center;
+}
