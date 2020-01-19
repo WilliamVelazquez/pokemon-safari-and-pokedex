@@ -8,26 +8,40 @@ import './styles.css';
 
 const PokemonCard = (props) => {
 	const { name, info, pokemonId, handleClick, children } = props;
-	const [sprites, setSprites] = useState({});
+	const [pokeData, setPokeData] = useState({});
 
 	useEffect(() => {
     const fetchPokemonData = async () => {
 			const result = await fetch(`${API_BASE_URL}${pokemonId}`);
 			const { data, message } = await result.json();
-      setSprites(data.sprites);
+			const infoData = await fetch(`${API_BASE_URL}/info/${pokemonId}`);
+			const responseJson = await infoData.json();
+			setPokeData({
+				...data,
+				infoData: { ...responseJson.data }
+			});
 		};
 		fetchPokemonData();
 	}, []);
 
 	return (
-    <div onClick={isEmptyObject(sprites)?null:handleClick?()=>handleClick(pokemonId):null} className="card__container">
+    <div onClick={isEmptyObject(pokeData)?null:handleClick?()=>handleClick(pokemonId):null} className="card__container">
 			{ 
-				isEmptyObject(sprites) ?
+				isEmptyObject(pokeData) ?
 				<img className='rotating' src={PokeballNav} alt={`${name} image`} />
 				:
-				<img src={sprites.front_default} alt={`${name} image`} />
+				<img src={pokeData.sprites.front_default} alt={`${name} image`} />
 			}
-			<span>{name}</span>
+			{
+				!isEmptyObject(pokeData) &&
+				<span>
+					{
+						pokeData.infoData.names.find((options) => 
+							options.language.name === (localStorage.getItem('language') || 'en')
+						).name
+					}
+				</span>
+			}
     </div>
   );
 };
