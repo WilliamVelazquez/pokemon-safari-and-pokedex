@@ -15,6 +15,7 @@ const initialState = {
   'pokemons': [],
   'myPokemons': [],
   'initialPokemon': INITIAL_POKEMON_NUMBER,
+  'selectedPokemon': {},
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
