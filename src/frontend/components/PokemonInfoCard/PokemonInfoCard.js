@@ -22,7 +22,6 @@ const PokemonInfoCard = (props) => {
 			<div className='infoCard__data'>
 				<div className='infoCard__data__title'>
 					<h2>
-						{/* {pokemon.name} */}
 						{ 
 							pokemon.names.find((options) => 
 							options.language.name === (localStorage.getItem('language') || 'en')

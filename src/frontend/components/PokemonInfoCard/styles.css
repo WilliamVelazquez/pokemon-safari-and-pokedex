@@ -78,9 +78,10 @@
 .infoCard__data__types {
 	display: grid;
 	color: #ffffff;
+	padding: 0px 10px;
 	align-items: center;
 	grid-auto-flow: column;
-	grid-column-gap: 10px;
+	grid-column-gap: 5px;
 	justify-content: center;
 }
 
@@ -142,6 +143,10 @@
 		font-size: 24px;
 	}
 	
+	.infoCard__data__types {
+		grid-column-gap: 10px;
+	}
+
 	.infoCard__data__types--name {
 		font-size: 16px;
 		padding: 6px 12px;
