@@ -1,0 +1,151 @@
+.searchBox__container {
+	display: flex;
+	justify-content: center;
+}
+
+form {
+	/* height: 96px; */
+	/* position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	width: 550px;
+	padding: 35px; */
+	/* margin: -83px auto 0 auto; */
+	/* transform: scale(0.6); */
+	/* width: 400px; */
+	padding: 15px;
+	border-radius: 20px;
+	transform: scale(0.4);
+	background-color: #ff7575;
+	box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
+}
+
+.searchBox__form * {
+	outline: none;
+}
+
+.searchBox__form__table {
+	width: 100%;
+	display: table;
+}
+
+.searchBox__box {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+input, button {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	color: #fff;
+	font-family: 'system-ui';
+	background-color: transparent;
+}
+
+input[type="text"] {
+	width: auto;
+	height: 96px;
+	line-height: 1;
+	font-size: 45px;
+}
+
+@media only screen and (min-width: 400px) {
+	input[type="text"] {
+		width: 100%;
+		font-size: 60px;
+		text-align: center;
+	}
+}
+
+
+input[type="text"]::placeholder {
+	color: #ffffff;
+}
+
+.btn__container {
+	width: 1px;
+	padding-left: 35px;
+}
+
+button {
+	position: relative;
+	width: 84px;
+	height: 96px;
+	display: block;
+	cursor: pointer;
+}
+
+.btn__image {
+	top: -8px;
+	left: 0;
+	width: 43px;
+	height: 43px;
+	margin-top: 0;
+	position: relative;
+	border-width: 15px;
+	border-radius: 50%;
+	border: 15px solid #fff;
+	background-color: transparent;
+	transition: 0.5s ease all;
+}
+
+button span{
+	top: 68px;
+	left: 43px;
+	width: 45px;
+	height: 15px;
+	display: block;
+	position: absolute;
+	border-radius: 10px;
+	background-color: transparent;
+	transform: rotateZ(52deg);
+	transition: 0.5s ease all;
+}
+
+button span:before, button span:after{
+	content: '';
+	right: 0;
+	bottom: 0;
+	width: 45px;
+	height: 15px;
+	position: absolute;
+	border-radius: 10px;
+	transform: rotateZ(0);
+	background-color: #fff;
+	transition: 0.5s ease all;
+}
+
+.btn__container:hover .btn__image{
+	top: -1px;
+	width: 67px;
+	height: 15px;
+	border-width: 0;
+	border-radius: 20px;
+	background-color: #fff;
+}
+
+.btn__container:hover span {
+	top: 50%;
+	left: 56px;
+	width: 25px;
+	margin-top: -9px;
+	transform: rotateZ(0);
+}
+
+.btn__container:hover button span:before {
+	bottom: 11px;
+	transform: rotateZ(52deg);
+}
+
+.btn__container:hover button span:after {
+	bottom: -11px;
+	transform: rotateZ(-52deg);
+}
+
+.btn__container:hover button span:before, .btn__container:hover button span:after {
+	right: -6px;
+	width: 40px;
+	background-color: #fff;
+}

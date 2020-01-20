@@ -20,6 +20,8 @@ const resources = {
       'weight': 'Weight',
       'height': 'Height',
       'moreInfo': 'More Information',
+      'searchPlaceHolder': 'Search...',
+      'pokemonNotFound': 'Pokémon Not Found'
     },
   },
   es: {
@@ -43,6 +45,8 @@ const resources = {
       'weight': 'Peso',
       'height': 'Altura',
       'moreInfo': 'Más Información',
+      'searchPlaceHolder': 'Buscar...',
+      'pokemonNotFound': 'Pokémon No Encontrado'
     },
   },
 };
