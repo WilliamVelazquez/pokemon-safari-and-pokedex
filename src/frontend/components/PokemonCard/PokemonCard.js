@@ -36,9 +36,9 @@ const PokemonCard = (props) => {
 				!isEmptyObject(pokeData) &&
 				<span>
 					{
-						pokeData.infoData.names.find((options) => 
+						`N.° ${pokemonId.toString().length>2?'':pokemonId.toString().length>1?'0':'00'}${pokemonId} ${pokeData.infoData.names.find((options) => 
 							options.language.name === (localStorage.getItem('language') || 'en')
-						).name
+						).name}`
 					}
 				</span>
 			}

@@ -17,6 +17,9 @@ const resources = {
       'languagePlaceHolder': 'Select Language',
       'userFeedback': 'Can not load the data :(',
       'tryAgainLater': 'Please wait a moment or try again later',
+      'weight': 'Weight',
+      'height': 'Height',
+      'moreInfo': 'More Information',
     },
   },
   es: {
@@ -37,6 +40,9 @@ const resources = {
       'languagePlaceHolder': 'Selecciona un idioma',
       'userFeedback': 'No se ha cargado la información :(',
       'tryAgainLater': 'Por favor espera un momento o intenta de nuevo más tarde',
+      'weight': 'Peso',
+      'height': 'Altura',
+      'moreInfo': 'Más Información',
     },
   },
 };

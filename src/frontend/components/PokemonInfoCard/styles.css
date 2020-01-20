@@ -35,9 +35,10 @@
 	flex-direction: column;
 }
 
-/* .infoCard__sprite img {
-	margin-bottom: 5px;
-} */
+.infoCard__sprite img {
+	width: auto;
+	/* margin-bottom: 5px; */
+}
 
 .infoCard__sprite img.rotating {
 	animation:spin 4s linear infinite;
@@ -108,7 +109,25 @@
 	font-size: 12px;
 	color: #29335C;
 	font-weight: bold;
-	padding: 10px 12px;
+	padding: 5px 12px;
+}
+
+.infoCard__data__measurement {
+	display: grid;
+	font-size: 10px;
+	margin: 0px 20px;
+	color: #29335C;
+	border: 2px solid;
+	font-weight: bold;
+	margin-bottom: 10px;
+	border-radius: 15px;
+	/* padding: 0px 50px; */
+	justify-items: center;
+	grid-template-columns: 1fr;
+}
+
+.more-data {
+	grid-column-end: auto;
 }
 
 .infoCard__close-btn {
@@ -119,6 +138,7 @@
 	font-size: 16px;
 	color: #ffffff;
 	padding-top: 1px;
+	line-height: 26px;
 	font-weight: bold;
 	border-radius: 50%;
 	text-align: center;
@@ -137,6 +157,15 @@
 	}
 	to {
 		opacity:1;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.infoCard__sprite img {
+		width: 100%;
+	}
+	.infoCard__data__measurement {
+		margin: 0px 80px;
 	}
 }
 
@@ -162,6 +191,25 @@
 
 	.infoCard__data__description {
 		font-size: 16px;
-		padding: 15px 25px;
+		padding: 5px 25px;
+	}
+
+	.infoCard__data__measurement {
+		font-size: 14px;
+	}
+
+	.infoCard__data__measurement {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.more-data {
+		grid-column-end: span 2;
+	}
+}
+
+
+@media only screen and (min-width: 1200px) {
+	.infoCard__data__description {
+		padding: 20px 25px;
 	}
 }
