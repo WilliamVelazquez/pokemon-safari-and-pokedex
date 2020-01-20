@@ -3,7 +3,7 @@
 	height: 100%;
 	display: grid;
 	overflow: auto;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .hidden {
@@ -15,6 +15,12 @@
 	margin-top: -10px;
 	align-self: center;
 	justify-self: center;
+}
+
+@media only screen and (min-width: 450px) {
+  .list__container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
 }
 
 @media only screen and (min-width: 768px) {

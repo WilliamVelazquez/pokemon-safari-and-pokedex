@@ -14,7 +14,7 @@ const PokemonCard = (props) => {
     const fetchPokemonData = async () => {
 			const result = await fetch(`${API_BASE_URL}${pokemonId}`);
 			const { data, message } = await result.json();
-			const infoData = await fetch(`${API_BASE_URL}/info/${pokemonId}`);
+			const infoData = await fetch(`${API_BASE_URL}info/${pokemonId}`);
 			const responseJson = await infoData.json();
 			setPokeData({
 				...data,

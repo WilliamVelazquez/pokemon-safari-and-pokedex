@@ -57,7 +57,7 @@ class PokemonCardList extends Component{
 			const result = await fetch(`${API_BASE_URL}info/${selectedPokemon}`);
 			const { data } = await result.json();
 			// console.log('selectedPokemonA-->', data);
-			const baseData = await fetch(`${API_BASE_URL}/${selectedPokemon}`);
+			const baseData = await fetch(`${API_BASE_URL}${selectedPokemon}`);
 			const responseJson = await baseData.json();
 			// console.log('selectedPokemonB-->', responseJson.data);
 			this.props.selectPokemon({

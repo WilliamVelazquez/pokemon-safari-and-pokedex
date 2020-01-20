@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'http://localhost:3002/api/pokemons/';
+export const API_BASE_URL = 'https://pokemon-simple-api.now.sh/api/pokemons/';
 export const INITIAL_POKEMON_NUMBER = 1;
 export const LAST_POKEMON_NUMBER = 151;
 export const POKEMON_QUANTITY_TO_LOAD = 10;
@@ -22,4 +22,13 @@ export const TYPES_COLORS = {
 	rock: 'B9A156',
 	steel: 'B5B5C3',
 	water: '3295F6',
+};
+
+export const REQUEST_CONFIG = {
+	method: ('GET'),
+	headers: {
+		Accept: ('application/json'),
+		'Content-Type': ('application/json'),
+		'Access-Control-Allow-Origin:': '*'
+	}
 };
