@@ -7,18 +7,9 @@ import { createBrowserHistory } from 'history';
 import 'babel-polyfill';
 import './localization/i18n';
 
-import { INITIAL_POKEMON_NUMBER } from 'Constants/app';
-
 import reducer from './reducers';
 import App from './routes/App';
-
-const initialState = {
-  // 'language': localStorage.getItem('language') || 'en',
-  'pokemons': [],
-  'myPokemons': [],
-  'initialPokemon': INITIAL_POKEMON_NUMBER,
-  'selectedPokemon': {},
-};
+import initialState from './initialState';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhancers());
