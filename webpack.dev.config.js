@@ -1,8 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 require('dotenv').config();
 
 module.exports = {
+  mode: 'development',
   resolve: {
     alias: {
       Utils: path.resolve(__dirname, 'src/frontend/utils/'),
@@ -13,8 +14,9 @@ module.exports = {
     app: path.resolve(__dirname, 'src/frontend/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    path: '/', //path.resolve(__dirname, 'dist'),
+    filename: 'assets/app.js', //'js/[name].js',
+    publicPath: '/',
   },
   devServer: {
     port: process.env.PORT || 3001,
@@ -53,7 +55,7 @@ module.exports = {
           options: {
             limit: 1000000,
             fallback: 'file-loader',
-            name: 'images/[name].[hash].[ext]',
+            name: 'assets/images/[name].[hash].[ext]',
           },
         },
       },
@@ -66,9 +68,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: './index.html',
-      template: './src/frontend/public/index.html',
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: './index.html',
+    //   template: './src/frontend/public/index.html',
+    // }),
   ],
 };

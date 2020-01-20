@@ -1,9 +1,10 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 require('dotenv').config();
 
 module.exports = (env) => {
@@ -11,15 +12,16 @@ module.exports = (env) => {
   console.log('Production: ', env.production); // true
 
   const plugins = [
+    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
     }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'src/frontend/public/index.html',
-      favicon: './src/frontend/public/favicon.ico',
-      title: 'Pokédex & Safari | Pokémon',
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'index.html',
+    //   template: 'src/frontend/public/index.html',
+    //   favicon: './src/frontend/public/favicon.ico',
+    //   title: 'Pokédex & Safari | Pokémon',
+    // }),
   ];
 
   if (env.NODE_ENV === 'production') {
@@ -37,13 +39,31 @@ module.exports = (env) => {
       },
     },
     optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          cache: true,
-          parallel: true,
-        }),
-        new OptimizeCssAssetsPlugin({}),
-      ],
+      splitChunks: {
+        chunks: 'async',
+        name: true,
+        cacheGroups: {
+          vendors: {
+            name: 'vendors',
+            chunks: 'all',
+            reuseExistingChunk: true,
+            priority: 1,
+            filename: 'assets/vendor.js',
+            enforce: true,
+            test(module, chunks) {
+              const name = module.nameForCondition && module.nameForCondition();
+              return chunks.some((chunk) => chunk.name !== 'vendor' && /[\\/]node_modules[\\/]/.test(name));
+            },
+          },
+        },
+      },
+      // minimizer: [
+      //   new UglifyJsPlugin({
+      //     cache: true,
+      //     parallel: true,
+      //   }),
+      //   new OptimizeCssAssetsPlugin({}),
+      // ],
     },
     entry: {
       app: path.resolve(__dirname, 'src/frontend/index.js'),
