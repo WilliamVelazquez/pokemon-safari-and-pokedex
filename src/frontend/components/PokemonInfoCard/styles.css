@@ -54,8 +54,10 @@
 .infoCard__data {
 	width: 100%;
 	height: 90%;
+	display: grid;
 	margin: 10px 0px;
 	border-radius: 5px;
+    align-content: space-around;
 	background: rgba(255, 255, 255, .25);
 }
 
@@ -63,17 +65,36 @@
 	display: grid;
 	color: #29335C;
 	align-items: center;
-	grid-column-gap: 15px;
-	grid-auto-flow: column;
+	grid-auto-flow: row;
 	justify-content: center;
 	text-transform: capitalize;
 }
 
 .infoCard__data__title h2,
 .infoCard__data__title h3 {
-	margin: 2px;
-	font-size: 18px;
+	margin: 0px;
+	font-size: 16px;
+	text-align: center;
 }
+
+.infoCard__data__title h3 {
+	font-size: 14px;
+}
+
+@media only screen and (min-width: 500px) {
+	.infoCard__data__title {
+		grid-column-gap: 15px;
+		grid-auto-flow: column;
+	}
+	
+	.infoCard__data__title h2,
+	.infoCard__data__title h3 {
+		margin: 2px;
+		font-size: 18px;
+		text-align: left;
+	}
+}
+
 
 /* .infoCard__data__title h3 {
 	height: 30px;
@@ -120,7 +141,7 @@
 	border: 2px solid;
 	font-weight: bold;
 	margin-bottom: 10px;
-	border-radius: 15px;
+	border-radius: 10px;
 	/* padding: 0px 50px; */
 	justify-items: center;
 	grid-template-columns: 1fr;
