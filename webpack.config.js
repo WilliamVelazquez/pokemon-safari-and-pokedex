@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+require('dotenv').config();
 
 module.exports = (env) => {
   console.log('NODE_ENV: ', env.NODE_ENV); // 'local'
@@ -54,7 +55,7 @@ module.exports = (env) => {
       chunkFilename: 'js/[id].[chunkhash].js',
     },
     devServer: {
-      port: 3000,
+      port: process.env.PORT || 3001,
       historyApiFallback: true,
     },
     node: {

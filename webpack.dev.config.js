@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+require('dotenv').config();
 
 module.exports = {
   resolve: {
@@ -16,7 +17,7 @@ module.exports = {
     filename: 'js/[name].js',
   },
   devServer: {
-    port: 3000,
+    port: process.env.PORT || 3001,
     historyApiFallback: true,
   },
   node: {

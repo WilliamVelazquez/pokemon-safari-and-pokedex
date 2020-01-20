@@ -20,6 +20,11 @@ pids
 dist
 build/Release
 
+# Tests
+test/cypress/videos
+test/cypress/screenshots
+test/cypress/integration/examples
+
 # TypeScript cache
 *.tsbuildinfo
 
