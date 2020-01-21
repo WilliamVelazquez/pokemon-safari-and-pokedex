@@ -63,7 +63,8 @@ module.exports = {
           options: {
             limit: 1000000,
             fallback: 'file-loader',
-            name: 'assets/images/[name].[hash].[ext]',
+            name: 'assets/images/[hash].[ext]',
+            // name: 'assets/images/[name].[hash].[ext]',
           },
         },
       },
