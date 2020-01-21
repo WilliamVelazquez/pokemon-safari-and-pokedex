@@ -20,10 +20,10 @@ const Pokedex = (props) => {
 		try {
 			const result = await fetch(`${API_BASE_URL}info/${searchedPokemon.toLowerCase()}`);
 			const { data } = await result.json();
-			console.log('searchedPokemonA-->', data);
+			// console.log('searchedPokemonA-->', data);
 			const baseData = await fetch(`${API_BASE_URL}${searchedPokemon.toLowerCase()}`);
 			const responseJson = await baseData.json();
-			console.log('searchedPokemonB-->', responseJson.data);
+			// console.log('searchedPokemonB-->', responseJson.data);
 			selectPokemon({
 				...data,
 				baseData: { ...responseJson.data }

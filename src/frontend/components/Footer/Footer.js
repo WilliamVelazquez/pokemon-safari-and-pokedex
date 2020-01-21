@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactFlagsSelect from 'react-flags-select';
+import { isServer } from 'Utils/functions';
 
 import 'react-flags-select/css/react-flags-select.css';
 import './styles.css';
@@ -20,7 +21,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <ReactFlagsSelect
-        defaultCountry={t(`countryCode.${localStorage.getItem('language') || 'en'}`) || 'US'}
+        defaultCountry={t(`countryCode.${!isServer ? localStorage.getItem('language') || 'en' : 'en'}`) || 'US'}
         countries={['US', 'MX']}
         customLabels={{ 'US': 'EN-US', 'MX': 'ES-MX' }}
         showSelectedLabel={true}

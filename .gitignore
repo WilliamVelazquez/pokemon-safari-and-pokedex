@@ -19,6 +19,7 @@ pids
 # Compiled binary addons
 dist
 build/Release
+src/server/public
 
 # Tests
 test/cypress/videos

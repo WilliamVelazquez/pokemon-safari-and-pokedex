@@ -6,7 +6,7 @@
   height: 32px;
   display: flex;
   color: #ffffff;
-  position: absolute;
+  position: fixed;
   align-items: center;
   background: #d21d1d;/*#B02E0C*/
   justify-content: flex-end;

@@ -2,7 +2,9 @@ import i18n from 'i18next';
 import Backend from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import { isServer } from 'Utils/functions';
 import { resources } from './translations';
+require('dotenv').config();
 
 i18n
   .use(Backend)// load translation using xhr -> see /public/locales
@@ -10,9 +12,9 @@ i18n
   .use(initReactI18next)// pass the i18n instance to react-i18next
   .init({
     resources,
-    lng: localStorage.getItem('language') || 'en',
+    lng: !isServer ? localStorage.getItem('language') || 'en' : 'en',
     fallbackLng: 'en',
-    debug: true,
+    debug: (process.env.NODE_ENV === 'production') ? false : true,
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
