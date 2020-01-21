@@ -15,7 +15,7 @@ app.use(express.static(`${__dirname}/public`));
 if (ENV === 'development') {
   console.log('Loading Dev config...');
   // eslint-disable-next-line global-require
-  const webpackConfig = require('../../webpack.dev.config');
+  const webpackConfig = require('../../webpack.config');
   const webpackDevMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(webpackConfig);

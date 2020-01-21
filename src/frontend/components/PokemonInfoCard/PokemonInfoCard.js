@@ -10,7 +10,7 @@ import './styles.css';
 const PokemonInfoCard = (props) => {
 	const { t } = useTranslation();
 	const { pokemon, handleClose } = props;
-	console.log(pokemon);
+	// console.log(pokemon);
   return (
     <div className='infoCard__container animation'>
 			<div className='infoCard__sprite'>
