@@ -15,7 +15,8 @@
     "test:init": "npm run build:prod && npm run test:server",
     "cypress:open": "cypress open --project ./test",
     "test:dev": "npm run build:prod && run-p --race test:server cypress:open",
-    "test:ssr": "npm run build && run-p --race start:dev cypress:open"
+    "test:ssr": "npm run build && run-p --race start:dev cypress:open",
+    "deploy": "gcloud beta functions deploy pokemon-safari-and-pokedex --runtime nodejs8 --entry-point handler --trigger-http --stage-bucket medium-post-functions --memory=2048MB"
   },
   "repository": {
     "type": "git",
