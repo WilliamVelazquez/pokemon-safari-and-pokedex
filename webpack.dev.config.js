@@ -59,11 +59,11 @@ module.exports = {
       {
         test: /\.(jpg|jpeg|png|gif)$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
-            limit: 1000000,
-            fallback: 'file-loader',
-            name: 'assets/images/[hash].[ext]',
+            // limit: 1000000,
+            // fallback: 'file-loader',
+            name: 'assets/images/[name].[ext]',
             // name: 'assets/images/[name].[hash].[ext]',
           },
         },
@@ -72,6 +72,9 @@ module.exports = {
         test: /\.svg/,
         use: {
           loader: 'svg-url-loader',
+          options: {
+            name: 'assets/images/[name].[ext]',
+          }
         },
       },
     ],

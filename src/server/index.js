@@ -6,8 +6,10 @@ require('@babel/register')({
 });
 
 require('asset-require-hook')({
-  extensions: ['jpg', 'jpeg', 'png', 'svg', 'gif'],
-  name: '/assets/images/[hash].[ext]',
+  extensions: ['png', 'svg', 'gif', 'jpg', 'jpeg'],
+  name: '/assets/images/[name].[ext]',
+  // regExp: '/.(jpg|jpeg|png|gif|svg)$/,',
+  // name: '/assets/images/[name].[ext]',
 });
 
 require('./server.js');
