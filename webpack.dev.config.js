@@ -13,6 +13,26 @@ module.exports = {
   //   },
   //   extensions: ['.js', '.jsx', '.json', '.scss'],
   // },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          chunks: 'all',
+          reuseExistingChunk: true,
+          priority: 1,
+          filename: 'assets/vendor.js',
+          enforce: true,
+          test(module, chunks) {
+            const name = module.nameForCondition && module.nameForCondition();
+            return chunks.some((chunk) => chunk.name !== 'vendor' && /[\\/]node_modules[\\/]((?!(react-flags-select)).*)[\\/]((?!(intersection-observer)).*)[\\/]/.test(name));
+          },
+        },
+      },
+    },
+  },
   entry: {
     app: path.resolve(__dirname, 'src/frontend/index.js'),
   },
@@ -73,8 +93,9 @@ module.exports = {
         use: {
           loader: 'svg-url-loader',
           options: {
+            limit: 1000,
             name: 'assets/images/[name].[ext]',
-          }
+          },
         },
       },
     ],
