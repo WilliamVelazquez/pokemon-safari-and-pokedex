@@ -10,7 +10,6 @@ import './localization/i18n';
 import reducer from './reducers';
 import App from './routes/App';
 // import initialState from './initialState';
-import { isServer } from 'Utils/functions';
 
 if (typeof window !== 'undefined') {
   let composeEnhancers;

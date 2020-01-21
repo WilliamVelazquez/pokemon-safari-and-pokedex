@@ -1,19 +1,32 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 require('dotenv').config();
 
+const isProd = (process.env.NODE_ENV === 'production');
+
+const plugins = [
+  new MiniCssExtractPlugin({
+    filename: 'assets/app.css',
+  }),
+];
+
+if (isProd) {
+  plugins.push(
+    new CompressionPlugin({
+      test: /\.js$|\.css$/,
+      filename: '[path].gz',
+    }),
+  );
+}
+
+
 module.exports = {
-  mode: 'development',
-  // resolve: {
-  //   modules: [path.resolve('./node_modules')],
-  //   alias: {
-  //     Utils: path.resolve(__dirname, 'src/frontend/utils/'),
-  //     Constants: path.resolve(__dirname, 'src/frontend/constants/'),
-  //   },
-  //   extensions: ['.js', '.jsx', '.json', '.scss'],
-  // },
+  devtool: isProd ? 'hidden-source-map' : 'cheap-source-map',
+  mode: process.env.NODE_ENV,
   optimization: {
+    minimizer: isProd ? [new TerserPlugin()] : [],
     splitChunks: {
       chunks: 'async',
       name: true,
@@ -37,7 +50,7 @@ module.exports = {
     app: path.resolve(__dirname, 'src/frontend/index.js'),
   },
   output: {
-    path: '/', //path.resolve(__dirname, 'dist'),
+    path: isProd ? path.join(process.cwd(), './src/server/public') : '/', //path.resolve(__dirname, 'dist'),
     filename: 'assets/app.js', //'js/[name].js',
     publicPath: '/',
   },
@@ -100,13 +113,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'assets/app.css',
-    }),
-    // new HtmlWebpackPlugin({
-    //   filename: './index.html',
-    //   template: './src/frontend/public/index.html',
-    // }),
-  ],
+  plugins,
 };
