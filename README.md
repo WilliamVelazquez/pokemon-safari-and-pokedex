@@ -20,12 +20,12 @@ Require Node.JS
 * `npm run lint` For verifying ESLint rules.
 * `npm run build` For creating productionn files on the public output path.
 * `npm run start:dev` For running SSR Application on development environment.
-> **Note:** the .env file must have development as NODE_ENV value.
+> **Note:** the .env file must have **development** as NODE_ENV value.
 * `npm run start:prod` For running SSR Application on production environment.
-> **Note:** the .env file must have production as NODE_ENV value.
+> **Note:** the .env file must have **production** as NODE_ENV value.
 * `npm run cypress:open` For opening Cypress Application with the available tests.
 * `npm run test:ssr` For building the SSR Application, running the development environment and opening the Cypress Application in order to run the tests availables.
-> **Note:** the .env and cypress files must have the same PORT specified.
+> **Note:** the .env and cypress files must have the **same PORT** specified.
 
 ## Author & Credits
 
