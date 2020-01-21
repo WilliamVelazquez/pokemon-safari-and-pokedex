@@ -6,6 +6,15 @@
 	"plugins": [
 		[
 		  "@babel/plugin-proposal-class-properties"
+		],
+		[
+			"module-resolver", {
+				"root": ["."],
+				"alias": {
+					"Utils": "./src/frontend/utils",
+					"Constants": "./src/frontend/constants"
+				}
+			}
 		]
 	],
 	"env": {

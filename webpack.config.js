@@ -14,7 +14,8 @@ module.exports = (env) => {
   const plugins = [
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash].css',
+      filename: 'assets/app.css',
+      // filename: 'css/[name].[hash].css',
     }),
     // new HtmlWebpackPlugin({
     //   filename: 'index.html',
@@ -70,9 +71,10 @@ module.exports = (env) => {
     },
     output: {
       path: (env.NODE_ENV === 'production') ? path.resolve(__dirname, './dist/') : path.resolve(__dirname, 'dist'),
-      filename: 'js/[name].[hash].js',
+      // filename: 'js/[name].[hash].js',
+      filename: 'assets/app.js',
       publicPath: (env.NODE_ENV === 'production') ? './' : './dist/',
-      chunkFilename: 'js/[id].[chunkhash].js',
+      // chunkFilename: 'js/[id].[chunkhash].js',
     },
     devServer: {
       port: process.env.PORT || 3001,
@@ -106,7 +108,7 @@ module.exports = (env) => {
             options: {
               limit: 10000,
               fallback: 'file-loader',
-              name: 'images/[name].[hash].[ext]',
+              name: 'assets/images/[name].[hash].[ext]',
             },
           },
         },

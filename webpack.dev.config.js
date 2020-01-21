@@ -1,15 +1,18 @@
 const path = require('path');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 require('dotenv').config();
 
 module.exports = {
   mode: 'development',
-  resolve: {
-    alias: {
-      Utils: path.resolve(__dirname, 'src/frontend/utils/'),
-      Constants: path.resolve(__dirname, 'src/frontend/constants/'),
-    },
-  },
+  // resolve: {
+  //   modules: [path.resolve('./node_modules')],
+  //   alias: {
+  //     Utils: path.resolve(__dirname, 'src/frontend/utils/'),
+  //     Constants: path.resolve(__dirname, 'src/frontend/constants/'),
+  //   },
+  //   extensions: ['.js', '.jsx', '.json', '.scss'],
+  // },
   entry: {
     app: path.resolve(__dirname, 'src/frontend/index.js'),
   },
@@ -46,7 +49,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+        ],
       },
       {
         test: /\.(jpg|jpeg|png|gif)$/,
@@ -68,6 +76,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'assets/app.css',
+    }),
     // new HtmlWebpackPlugin({
     //   filename: './index.html',
     //   template: './src/frontend/public/index.html',
