@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 require('dotenv').config();
 
 const isProd = (process.env.NODE_ENV === 'production');
@@ -20,8 +21,15 @@ if (isProd) {
       filename: '[path].gz',
     }),
   );
+
   plugins.push(
     new ManifestPlugin(),
+  );
+
+  plugins.push(
+    new CopyPlugin([
+      './src/frontend/public/favicon.ico',
+    ]),
   );
 }
 

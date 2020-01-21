@@ -27,6 +27,9 @@ const render = (html, preloadedState) => {
       <meta name="keywords" content="WilliamVelazquez, William, React" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
+      <title>Pokédex - Safari | Pokémon</title>
+      <meta name="theme-color" content="#d21d1d" />
+      <link rel="shortcut icon" type="image/png/ico" href="/favicon.ico" />
       <!-- CSS -->
       <link href="${files['app.css']}" rel="stylesheet" type="text/css"></link>
     </head>
