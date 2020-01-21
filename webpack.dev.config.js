@@ -2,13 +2,14 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 require('dotenv').config();
 
 const isProd = (process.env.NODE_ENV === 'production');
 
 const plugins = [
   new MiniCssExtractPlugin({
-    filename: 'assets/app.css',
+    filename: isProd ? 'assets/app-[hash].css' : 'assets/app.css',
   }),
 ];
 
@@ -19,8 +20,10 @@ if (isProd) {
       filename: '[path].gz',
     }),
   );
+  plugins.push(
+    new ManifestPlugin(),
+  );
 }
-
 
 module.exports = {
   devtool: isProd ? 'hidden-source-map' : 'cheap-source-map',
@@ -36,7 +39,7 @@ module.exports = {
           chunks: 'all',
           reuseExistingChunk: true,
           priority: 1,
-          filename: 'assets/vendor.js',
+          filename: isProd ? 'assets/vendors-[hash].js' : 'assets/vendors.js',
           enforce: true,
           test(module, chunks) {
             const name = module.nameForCondition && module.nameForCondition();
@@ -51,7 +54,7 @@ module.exports = {
   },
   output: {
     path: isProd ? path.join(process.cwd(), './src/server/public') : '/', //path.resolve(__dirname, 'dist'),
-    filename: 'assets/app.js', //'js/[name].js',
+    filename: isProd ? 'assets/app-[hash].js' : 'assets/app.js', //'js/[name].js',
     publicPath: '/',
   },
   devServer: {

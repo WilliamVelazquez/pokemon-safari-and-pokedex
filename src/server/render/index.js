@@ -1,3 +1,18 @@
+import getManifest from '../getManifest';
+require('dotenv').config();
+
+let files;
+
+if (process.env.NODE_ENV === 'production') {
+  files = getManifest();
+} else {
+  files = {
+    'app.css': 'assets/app.css',
+    'app.js': 'assets/app.js',
+    'vendors.js': 'assets/vendors.js',
+  };
+}
+
 const render = (html, preloadedState) => {
   return (`
     <!--@Author William E. Velázquez A. - info@williamvelazquez.com-->
@@ -13,7 +28,7 @@ const render = (html, preloadedState) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="robots" content="index, follow" />
       <!-- CSS -->
-      <link href="assets/app.css" rel="stylesheet" type="text/css"></link>
+      <link href="${files['app.css']}" rel="stylesheet" type="text/css"></link>
     </head>
     <body>
       <div class="container" id="app">${html}</div>
@@ -24,8 +39,8 @@ const render = (html, preloadedState) => {
           '\\u003c'
         )}
       </script>
-      <script src="assets/app.js" type="text/javascript"></script>
-      <script src="assets/vendor.js" type="text/javascript"></script>
+      <script src="${files['app.js']}" type="text/javascript"></script>
+      <script src="${files['vendors.js']}" type="text/javascript"></script>
     </body>
     </html>
   `);

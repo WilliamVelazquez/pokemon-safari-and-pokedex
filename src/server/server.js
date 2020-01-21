@@ -13,7 +13,7 @@ const app = express();
 app.use(express.static(`${__dirname}/public`));
 
 if (ENV === 'development') {
-  console.log('Loading Dev Config...');
+  console.log('Loading Dev config...');
   // eslint-disable-next-line global-require
   const webpackConfig = require('../../webpack.dev.config');
   const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -31,6 +31,7 @@ if (ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, serverConfig));
   app.use(webpackHotMiddleware(compiler));
 } else {
+  console.log(`Loading ${ENV} config...`);
   app.use(helmet());
   app.use(helmet.permittedCrossDomainPolicies());
   app.disable('x-powered-by');
