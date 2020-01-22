@@ -3,6 +3,8 @@
 Pokémon Safari and Pokédex developed with React, Redux and Express.
 Gotta Catch 'Em All!
 
+[Live Demo](http://35.188.101.176:3001/)
+
 ![Pokédex](./.readme-static/pokedex-readme.jpg)
 
 ## Pre-requisites
@@ -26,6 +28,9 @@ Require Node.JS
 * `npm run cypress:open` For opening Cypress Application with the available tests.
 * `npm run test:ssr` For building the SSR Application, running the development environment and opening the Cypress Application in order to run the tests availables.
 > **Note:** the .env and cypress files must have the **same PORT** specified.
+
+You can test the [Backend](https://pokemon-simple-api.now.sh/api/pokemons/) on the following URL
+https://pokemon-simple-api.now.sh/api/pokemons/
 
 ## Author & Credits
 
