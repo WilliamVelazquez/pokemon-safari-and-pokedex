@@ -12,7 +12,8 @@ Gotta Catch 'Em All!
 - **HTML, CSS & JS**
   Creating all the layout, styles of each element and some animations/interactions 
   (Like the **Intersection Observer** on the Pokédex while scrolling for more Pokémon
-  limited to the 151 Pokémon, if you want to see more you can search it on the box!).
+  limited to the 151 Pokémon (Just as Classic Pokédex), if you want to see other Pokémon 
+  all of them are available and you can search them on the box!).
 
 - **NodeJs & Express**
   Creating a **Backend** to serve the Pokémon data, handling **requests** to the server 
@@ -53,7 +54,7 @@ Gotta Catch 'Em All!
 ## Pre-requisites
 
 You must create a **.env** file on the root folder following the **.env-example** file.
-The file just contains the PORT for running the Application and the Environment we
+The file just contains the PORT for running the Application and the Environment you
 want to use (development or production).
 > **Note:** The suggested **PORT** for the **.env** file is the **3001**, if you decide to take a different PORT, consider to update it on the **cypress.json** file on the **baseUrl** key.
 
@@ -142,6 +143,10 @@ MIT
 ![Handling Not Found Routes](./.readme-static/handling-not-found.png)
 
 ![Page Under Construction](./.readme-static/page-in-progress.png)
+
+![Page Speed Insights Desktop Results](./.readme-static/page-speed-insights-desktop.png)
+
+![Page Speed Insights Mobile Results](./.readme-static/page-speed-insights-mobile.png)
 
 ![Production Build](./.readme-static/production-build.png)
 
