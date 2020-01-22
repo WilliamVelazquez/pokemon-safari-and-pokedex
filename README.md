@@ -9,40 +9,40 @@ Gotta Catch 'Em All!
 
 ## Functionality and Technologies
 
-- HTML CSS & JS
+- **HTML CSS & JS**
   Creating all the layout, styles of each element and some animations/interactions 
-  (Like the Intersection Observer on the Pokédex while scrolling for more Pokémon
+  (Like the **Intersection Observer** on the Pokédex while scrolling for more Pokémon
   limited to the 151 Pokémon, if you want to see more you can search it on the box!).
 
-- NodeJs & Express
-  Creating a Backend to serve the Pokémon data, handling requests to the server 
+- **NodeJs & Express**
+  Creating a **Backend** to serve the Pokémon data, handling **requests** to the server 
   (In order to hide the real API URL, just my Endpoints are visible).
 
-  Creating First Render Content from the Server Side for better UX and SEO.
+  Creating First Render Content from the **Server Side** for better UX, SEO and Performance.
 
-- React
+- **React**
   User interface library to create reactive and reusable componentes.
 
-- React Router
+- **React Router**
   Handling the available and unavailable routes (Look at Safari Route that respond with a Not Found).
 
-- Redux
+- ***Redux**
   Handling the application state and the data that will be shared between the components.
   (The Pokémon loaded on the Pokédex List should not need to request again their data even when visiting
   a different route and returning).
 
-- Webpack
-  Creating different staging environments (Development & Production), Bundling all the packages and handling
+- **Webpack**
+  Creating different staging environments (Development & Production), **Bundling** all the packages and handling
   a server side approach. (Splitting code on vendors and app code).
 
-- Cypress
+- **Cypress**
   Creating End To End Tests to verify the user application flows and interactions.
 
-- Mocha and NYC
+- **Mocha and NYC**
   Creating Tests for the Routes of the Backend and creating a coverage report.
 
-- i18n
-  Adding Multi-Language applications support (You can switch the language selecting a Flag!).
+- **i18n**
+  Adding **Multi-Language** applications support (You can switch the language selecting a Flag!).
 
 ## Pre-requisites
 
