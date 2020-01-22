@@ -1,0 +1,27 @@
+.underConstruction__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.underConstruction__container img{
+  width: 50%;
+}
+
+.underConstruction__container a {
+  text-align: center;
+}
+
+.underConstruction__container h1{
+  margin: 10px 0px;
+  color: #29335C;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .underConstruction__container img{
+    width: 35%;
+  }
+}

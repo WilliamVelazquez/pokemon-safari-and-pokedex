@@ -1,9 +1,12 @@
 import React from 'react';
 
 import MainLayout from '../components/MainLayout/MainLayout';
+import NotFoundContent from '../components/NotFoundContent/NotFoundContent';
 
 const NotFound = () => (
-	<MainLayout><h1 style={{textAlign:'center', color:'#ffffff'}}>404 Not Found!</h1></MainLayout>
+	<MainLayout>
+		<NotFoundContent />
+	</MainLayout>
 );
 
 export default NotFound;

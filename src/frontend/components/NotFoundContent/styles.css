@@ -1,0 +1,27 @@
+.notFound__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.notFound__container img {
+  width: 50%;
+}
+
+.notFound__container a {
+  text-align: center;
+}
+
+.notFound__container h1 {
+  margin: 10px 0px;
+  color: #ffffff;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .notFound__container img{
+    width: 35%;
+  }
+}

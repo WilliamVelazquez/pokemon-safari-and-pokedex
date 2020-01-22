@@ -18,10 +18,14 @@ body{
   /* background-color: #ef1f1f; */
 }
 
-.main__container.red{
-  background-color: #ef1f1f;
+.red{
+  background-color: #ef1f1f !important;
 }
 
-.main__container.gray{
-  background-color: #E6E8E6;
+.gray{
+  background-color: #E6E8E6 !important;
+}
+
+.white{
+  background-color: #ffffff !important;
 }

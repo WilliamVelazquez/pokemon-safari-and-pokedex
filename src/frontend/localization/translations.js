@@ -21,7 +21,9 @@ const resources = {
       'height': 'Height',
       'moreInfo': 'More Information',
       'searchPlaceHolder': 'Search...',
-      'pokemonNotFound': 'Pokémon Not Found'
+      'pokemonNotFound': 'Pokémon Not Found',
+      'pageNotFound': 'PokéPage Not Found',
+      'pageUnderConstruction': 'PokéPage Under Construction',
     },
   },
   es: {
@@ -46,7 +48,9 @@ const resources = {
       'height': 'Altura',
       'moreInfo': 'Más Información',
       'searchPlaceHolder': 'Buscar...',
-      'pokemonNotFound': 'Pokémon No Encontrado'
+      'pokemonNotFound': 'Pokémon No Encontrado',
+      'pageNotFound': 'PokéPágina No Encontrada',
+      'pageUnderConstruction': 'PokéPágina en Construcción',
     },
   },
 };

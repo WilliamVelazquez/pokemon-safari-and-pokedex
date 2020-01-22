@@ -36,7 +36,7 @@ const Pokedex = (props) => {
   }
   
   return (
-    <MainLayout>
+    <MainLayout backgroundColor='red'>
       <Screen>
         {
           !isEmptyObject(selectedPokemon) &&
