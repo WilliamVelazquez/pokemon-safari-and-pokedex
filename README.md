@@ -3,7 +3,7 @@
 Pokémon Safari and Pokédex developed with React, Redux and Express.
 Gotta Catch 'Em All!
 
-[Live Demo](http://35.188.101.176:3001/)
+[Live Demo](http://35.224.28.63:3001/)
 
 ![Pokédex](./.readme-static/pokedex-readme.jpg)
 
