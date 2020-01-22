@@ -7,6 +7,43 @@ Gotta Catch 'Em All!
 
 ![Pokédex](./.readme-static/pokedex-readme.jpg)
 
+## Functionality and Technologies
+
+- HTML CSS & JS
+  Creating all the layout, styles of each element and some animations/interactions 
+  (Like the Intersection Observer on the Pokédex while scrolling for more Pokémon
+  limited to the 151 Pokémon, if you want to see more you can search it on the box!).
+
+- NodeJs & Express
+  Creating a Backend to serve the Pokémon data, handling requests to the server 
+  (In order to hide the real API URL, just my Endpoints are visible).
+
+  Creating First Render Content from the Server Side for better UX and SEO.
+
+- React
+  User interface library to create reactive and reusable componentes.
+
+- React Router
+  Handling the available and unavailable routes (Look at Safari Route that respond with a Not Found).
+
+- Redux
+  Handling the application state and the data that will be shared between the components.
+  (The Pokémon loaded on the Pokédex List should not need to request again their data even when visiting
+  a different route and returning).
+
+- Webpack
+  Creating different staging environments (Development & Production), Bundling all the packages and handling
+  a server side approach. (Splitting code on vendors and app code).
+
+- Cypress
+  Creating End To End Tests to verify the user application flows and interactions.
+
+- Mocha and NYC
+  Creating Tests for the Routes of the Backend and creating a coverage report.
+
+- i18n
+  Adding Multi-Language applications support (You can switch the language selecting a Flag!).
+
 ## Pre-requisites
 
 You must create a **.env** file on the root folder following the **.env-example** file.
@@ -63,5 +100,13 @@ MIT
 ![React Router](./.readme-static/router.png)
 
 ![End To End Tests with Cypress](./.readme-static/end-to-end-tests.png)
+
+![Handling Not Found Routes](./.readme-static/handling-not-found.png)
+
+![Page Under Construction](./.readme-static/page-in-progress.png)
+
+![Production Build](./.readme-static/production-build.png)
+
+![Development Build](./.readme-static/development-build.png)
 
 ![Pokémon Icon](./.readme-static/icon.png)
