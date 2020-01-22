@@ -9,7 +9,7 @@ Gotta Catch 'Em All!
 
 ## Functionality and Technologies
 
-- **HTML CSS & JS**
+- **HTML, CSS & JS**
   Creating all the layout, styles of each element and some animations/interactions 
   (Like the **Intersection Observer** on the Pokédex while scrolling for more Pokémon
   limited to the 151 Pokémon, if you want to see more you can search it on the box!).
@@ -32,7 +32,7 @@ Gotta Catch 'Em All!
   a different route and returning).
 
 - **Webpack**
-  Creating different staging environments (Development & Production), **Bundling** all the packages and handling
+  Creating different staging environments (**Development & Production**), **Bundling** all the packages and handling
   a server side approach. (Splitting code on vendors and app code).
 
 - **Cypress**
@@ -41,15 +41,21 @@ Gotta Catch 'Em All!
 - **Mocha and NYC**
   Creating Tests for the Routes of the Backend and creating a coverage report.
 
-- **i18n**
+- **i18next**
   Adding **Multi-Language** applications support (You can switch the language selecting a Flag!).
+  
+- **ESLint**
+  Handling Code Analysis to Prevent Errors and Define a code writting style.
+  
+- **Google Cloud Platform & Now**
+  **Cloud Platforms** that **Deploy** instantly, scale automatically, and requires no supervision at all, with **minimum configuration**.
 
 ## Pre-requisites
 
 You must create a **.env** file on the root folder following the **.env-example** file.
 The file just contains the PORT for running the Application and the Environment we
 want to use (development or production).
-> **Note:** The suggested PORT for the **.env** file is the **3001**, if you decide to take a different PORT, consider to update it on the **cypress.json** file on the baseUrl key.
+> **Note:** The suggested **PORT** for the **.env** file is the **3001**, if you decide to take a different PORT, consider to update it on the **cypress.json** file on the **baseUrl** key.
 
 ## How It Works?
 
@@ -60,14 +66,46 @@ Require Node.JS
 * `npm run build` For creating productionn files on the public output path.
 * `npm run start:dev` For running SSR Application on development environment.
 > **Note:** the .env file must have **development** as NODE_ENV value.
-* `npm run start:prod` For running SSR Application on production environment.
+* `npm run start` For running SSR Application on production environment.
 > **Note:** the .env file must have **production** as NODE_ENV value.
 * `npm run cypress:open` For opening Cypress Application with the available tests.
 * `npm run test:ssr` For building the SSR Application, running the development environment and opening the Cypress Application in order to run the tests availables.
-> **Note:** the .env and cypress files must have the **same PORT** specified.
+> **Note:** The .env and cypress files must have the **same PORT** specified.
 
 You can test the [Backend](https://pokemon-simple-api.now.sh/api/pokemons/) on the following URL
 https://pokemon-simple-api.now.sh/api/pokemons/
+
+## Steps to run the Project locally
+
+1) Fork/Download/Clone the Project.
+
+2) On the Project Folder install the dependencies running on your terminal:
+```
+npm install 
+```
+3) On the root Folder create the file **.env** with the following inside
+For Development Environment:
+```
+PORT=3001
+NODE_ENV=development
+```
+For Production Environment:
+```
+PORT=3001
+NODE_ENV=production
+```
+4)Run the Project locally running on your terminal
+For Development Environment:
+```
+npm run start:dev
+```
+For Production Environment:
+```
+npm run start
+```
+5) Open your preferred Browser at the following URL:
+**http://localhost:3001/**
+> **Note:** The URL must end with the **same PORT** specified inside the **.env** file.
 
 ## Author & Credits
 
