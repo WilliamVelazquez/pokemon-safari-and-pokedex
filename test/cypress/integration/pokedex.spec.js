@@ -15,7 +15,7 @@ describe('Pokédex Test', () => {
 
 	it('Switching the Language to ES', () => {
 		cy.get('.selected--flag--option').click();
-		cy.contains('.flag-options .country-label','ES-MX').click();
+		cy.contains('.flag-options .country-label', 'ES-MX').click();
 		cy.wait(2000);
 		cy.contains('.selected--flag--option', 'ES-MX').should('be.visible');
 		cy.contains('.header__menu li a', 'Mi PC').should('not.visible');
@@ -24,12 +24,12 @@ describe('Pokédex Test', () => {
 
 	it('Switching the Language to EN', () => {
 		cy.get('.selected--flag--option').click();
-		cy.contains('.flag-options .country-label','EN-US').click();
+		cy.contains('.flag-options .country-label', 'EN-US').click();
 		cy.wait(2000);
 		cy.contains('.header__menu li a', 'My PC').should('not.visible');
 		cy.screenshot('switching-language-EN');
 	});
-	
+
 	it('Viewing Pokémon information', () => {
 		cy.wait(2000);
 		cy.get('.infoCard__container').should('not.visible');
@@ -49,7 +49,7 @@ describe('Pokédex Test', () => {
 		cy.get('.infoCard__data .infoCard__data__title h2').contains('Pikachu');
 		cy.screenshot('searching-pokemon-information-by-name-pikachu');
 	});
-	
+
 	it('Searching Pokémon Information by Id - Pikachu(25)', () => {
 		cy.wait(2000);
 		cy.get('.searchBox__form input').type('25');
@@ -74,4 +74,4 @@ describe('Pokédex Test', () => {
 	after(() => {
 		cy.log('Tests Completed!');
 	});
-})
+});
