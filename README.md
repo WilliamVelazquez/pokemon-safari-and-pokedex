@@ -72,9 +72,9 @@ Require Node.JS
 * `npm run start` For running SSR Application on production environment.
 > **Note:** the .env file must have **production** as NODE_ENV value.
 * `npm run cypress:open` For opening Cypress Application with the available tests.
-* `npm run cypress:run` For running Cypress with the available tests on the console.
+* `npm run cypress:run` For running Cypress with the available tests, on the terminal.
 * `npm run test:ssr` For building the SSR Application, running the development environment and opening the Cypress Application in order to run the tests availables.
-* `npm run test` For building the Application, running the production environment and running the Cypress with the tests availables on the console(**Great for CI**).
+* `npm run test` For building the Application, running the production environment and Cypress tests available, on the terminal(**Great for CI**).
 > **Note:** The .env and cypress.json on the **baseUrl** key must have the **same PORT** specified.
 > **Note:** The .env should have the respective **environment** when running the test scripts.
 
@@ -86,23 +86,23 @@ Require Node.JS
 ```
 npm install 
 ```
-3) On the root Folder create the file **.env** with the following inside
-For Development Environment:
+3) On the root Folder create the file **.env** with the following inside:
+> **For Development Environment:**
 ```
 PORT=3001
 NODE_ENV=development
 ```
-For Production Environment:
+> **For Production Environment:**
 ```
 PORT=3001
 NODE_ENV=production
 ```
-4)Run the Project locally running on your terminal
-For Development Environment:
+4)Run the Project locally running on your terminal:
+> **For Development Environment:**
 ```
 npm run start:dev
 ```
-For Production Environment:
+> **For Production Environment:**
 ```
 npm run start
 ```
@@ -118,7 +118,7 @@ You can test the [**Backend**](https://pokemon-simple-api.now.sh/api/pokemons/) 
 
 ## Author & Credits
 
-- [William Velazquez](https://twitter.com/@WilliamVlazquez)
+- [**William Velazquez**](https://twitter.com/@WilliamVlazquez)
 
 ## Social Networks
 
@@ -178,6 +178,14 @@ This project is licensed under the terms of the **MIT license**.
 
 <p align='center'>
   <img src='./.readme-static/test-specs.png' alt='Test Specs'/>
+</p>
+
+<p align='center'>
+  <img src='./.readme-static/cypress-dashboard-runs.png' alt='Cypress Dashboard Runs'/>
+</p>
+
+<p align='center'>
+  <img src='./.readme-static/cypress-dashboard-run-1.png' alt='Cypress Dashboard Run 1'/>
 </p>
 
 <p align='center'>
