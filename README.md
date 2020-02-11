@@ -3,9 +3,11 @@
 Pokémon Safari and Pokédex developed with React, Redux and Express.
 Gotta Catch 'Em All!
 
-[Live Demo](http://35.224.28.63:3001/)
+[**Live Demo**](http://35.224.28.63:3001/)
 
-![Pokédex](./.readme-static/pokedex-readme.jpg)
+<p align='center'>
+  <img src='./.readme-static/pokedex-readme.jpg' alt='Pokédex'/>
+</p>
 
 ## Functionality and Technologies
 
@@ -64,17 +66,17 @@ Require Node.JS
 
 * `npm install` For instailling dependencies.
 * `npm run lint` For verifying ESLint rules.
-* `npm run build` For creating productionn files on the public output path.
+* `npm run build` For creating production files on the public output path.
 * `npm run start:dev` For running SSR Application on development environment.
 > **Note:** the .env file must have **development** as NODE_ENV value.
 * `npm run start` For running SSR Application on production environment.
 > **Note:** the .env file must have **production** as NODE_ENV value.
 * `npm run cypress:open` For opening Cypress Application with the available tests.
+* `npm run cypress:run` For running Cypress with the available tests on the console.
 * `npm run test:ssr` For building the SSR Application, running the development environment and opening the Cypress Application in order to run the tests availables.
-> **Note:** The .env and cypress files must have the **same PORT** specified.
-
-You can test the [Backend](https://pokemon-simple-api.now.sh/api/pokemons/) on the following URL
-https://pokemon-simple-api.now.sh/api/pokemons/
+* `npm run test` For building the Application, running the production environment and running the Cypress with the tests availables on the console(**Great for CI**).
+> **Note:** The .env and cypress.json on the **baseUrl** key must have the **same PORT** specified.
+> **Note:** The .env should have the respective **environment** when running the test scripts.
 
 ## Steps to run the Project locally
 
@@ -108,6 +110,12 @@ npm run start
 **http://localhost:3001/**
 > **Note:** The URL must end with the **same PORT** specified inside the **.env** file.
 
+## Backend Information
+
+[**Pokémon Simple API - Backend Repository**](https://github.com/WilliamVelazquez/pokemon-simple-api)
+
+You can test the [**Backend**](https://pokemon-simple-api.now.sh/api/pokemons/) on the following URL https://pokemon-simple-api.now.sh/api/pokemons/
+
 ## Author & Credits
 
 - [William Velazquez](https://twitter.com/@WilliamVlazquez)
@@ -122,7 +130,7 @@ npm run start
 
 ## License
 
-MIT
+This project is licensed under the terms of the **MIT license**.
 
 ## Screenshots
 
@@ -140,16 +148,38 @@ MIT
 
 ![End To End Tests with Cypress](./.readme-static/end-to-end-tests.png)
 
-![Handling Not Found Routes](./.readme-static/handling-not-found.png)
+<p align='center'>
+  <img src='./.readme-static/handling-not-found.png' alt='Handling Not Found Routes'/>
+</p>
 
-![Page Under Construction](./.readme-static/page-in-progress.png)
+<p align='center'>
+  <img src='./.readme-static/page-in-progress.png' alt='Page Under Construction'/>
+</p>
 
 ![Page Speed Insights Desktop Results](./.readme-static/page-speed-insights-desktop.png)
 
 ![Page Speed Insights Mobile Results](./.readme-static/page-speed-insights-mobile.png)
 
-![Production Build](./.readme-static/production-build.png)
+<p align='center'>
+  <img src='./.readme-static/production-build.png' alt='Production Build'/>
+</p>
 
-![Development Build](./.readme-static/development-build.png)
+<p align='center'>
+  <img src='./.readme-static/development-build.png' alt='Development Build'/>
+</p>
 
-![Pokémon Icon](./.readme-static/icon.png)
+<p align='center'>
+  <img src='./.readme-static/pokedex-test-list.png' alt='Pokédex Test List'/>
+</p>
+
+<p align='center'>
+  <img src='./.readme-static/pokedex-test-results.png' alt='Pokédex Test Results'/>
+</p>
+
+<p align='center'>
+  <img src='./.readme-static/test-specs.png' alt='Test Specs'/>
+</p>
+
+<p align='center'>
+  <img src='./.readme-static/icon.png' alt='Pokémon Icon'/>
+</p>

@@ -14,8 +14,10 @@
     "test:server": "pushstate-server -d ./dist",
     "test:init": "npm run build:prod && npm run test:server",
     "cypress:open": "cypress open --project ./test",
+    "cypress:run": "cypress run --project ./test",
     "test:dev": "npm run build:prod && run-p --race test:server cypress:open",
-    "test:ssr": "npm run build && run-p --race start:dev cypress:open"
+    "test:ssr": "npm run build && run-p --race start:dev cypress:open",
+    "test": "run-p --race start cypress:run"
   },
   "repository": {
     "type": "git",
